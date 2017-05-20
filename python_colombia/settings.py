@@ -74,7 +74,7 @@ WSGI_APPLICATION = 'python_colombia.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -86,7 +86,7 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default.
     }
 }
-'''
+
 # Update database configuration with $DATABASE_URL.
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
