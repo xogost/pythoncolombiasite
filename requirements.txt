@@ -35,3 +35,4 @@ texttable==0.8.4
 twython==3.3.0
 virtualenv==15.1.0
 websocket-client==0.35.0
+whitenoise==3.3.0
