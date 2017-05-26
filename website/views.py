@@ -8,14 +8,25 @@ def index(request):
 	return render(request, "index.html")
 
 def groups(request):
-	url = "%s/find/groups?filter=all&text=python&country=57&sign=true&key=a6443747e92a6b4e347c6d6c7c4b4f" % (base_url)
-	response = requests.get(url)
+	"""
+	Get python groups from meetup.com
+	"""
+	locaitons = ['bogota', 'medellin', 'pasto', 'cali', 'barranquilla', 'santa marta', 'bucaramanga', 'cartagena', 'popayan', 'pereira']
+	groups = list()
+	for item in locaitons:
+		url = "%s/find/groups?filter=all&text=python&country=CO&location=%s&sign=true&key=a6443747e92a6b4e347c6d6c7c4b4f" % (base_url, item)
+		response = requests.get(url)
+		groups.append(response.json())
+
 	context = {
-		"response_data" : response.json()
+		"response_data" : groups
 	}
 	return render(request, "groups.html", context)
 
 def members(request, group_id):
+	"""
+	Get members of python groups from meetup.com
+	"""
 	url = "%s/2/members?group_id=%s&sign=true&key=a6443747e92a6b4e347c6d6c7c4b4f" % (base_url, group_id)
 	response = requests.get(url)
 	context = {
@@ -24,6 +35,9 @@ def members(request, group_id):
 	return render(request, "members.html", context)
 
 def events(request):
+	"""
+	Get python events from meetup.com
+	"""
 	url = "%s/find/events?text=python&sign=true&key=a6443747e92a6b4e347c6d6c7c4b4f" % (base_url)
 	response = requests.get(url)
 	context = {

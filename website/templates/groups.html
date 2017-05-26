@@ -3,15 +3,17 @@
 {% block content %}
 	<ul>
 	{% for item in response_data %}
-		<li>
-			<div>
-				<img src="{{ item.group_photo.highres_link }}" />
-				<span>{{ item.name }}</span>
-				<a href="/members/{{ item.id }}">
-					Ver Integrantes
-				</a>
-			</div>
-		</li>
+		{% for group in item %}
+			<li>
+				<div>
+					<img src="{{ group.group_photo.highres_link }}" />
+					<span>{{ group.name }}</span>
+					<a href="/members/{{ group.id }}">
+						Ver Integrantes
+					</a>
+				</div>
+			</li>
+		{% endfor %}
 	{% endfor %}
 	</ul>
 {% endblock content %}
