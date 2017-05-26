@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<ul>
+	{% for item in response_data %}
+		<li>
+			<div>
+				<img src="{{ item.group_photo.highres_link }}" />
+				<span>{{ item.name }}</span>
+				<a href="/members/{{ item.id }}">
+					Ver Integrantes
+				</a>
+			</div>
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock content %}

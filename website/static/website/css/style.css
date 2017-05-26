@@ -1,0 +1,17 @@
+li{
+	list-style-type: none;
+}
+
+div{
+	width: 80%;
+	margin: 1em auto;
+	text-align: center;
+}
+span{
+	display: block;
+}
+
+img{
+	width: 30%;
+	border: 2px solid #9c9c9c;
+}

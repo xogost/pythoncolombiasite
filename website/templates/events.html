@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<ul>
+	{% for item in response_data %}
+		<li>
+			<strong>{{ item.name }}</strong>
+			<br/>
+			<br/>
+			<ul>
+				<li>{{ item.venue.address_1 }}, {{ item.venue.name }}</li>
+				<li>{{ item.venue.city }}, {{ item.venue.localized_country_name }}</li>
+				<li>
+					{{ item.description|safe }}
+				</li>
+			</ul>
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock content %}

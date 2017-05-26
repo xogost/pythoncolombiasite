@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<ul>
+	{% for item in response_data.results %}
+		<li>{{ item.name }}</li>
+	{% endfor %}
+	</ul>
+{% endblock content %}
