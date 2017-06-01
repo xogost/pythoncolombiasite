@@ -3,9 +3,69 @@
 <html>
 	<head>
 		<title>Python Colombia</title>
-		<link rel="stylesheet" href="{% static '/website/css/style' %}.css">
+		<link rel="stylesheet" href="{% static '/website/css/style.css' %}">
+		<link rel="stylesheet" href="{% static '/website/css/semantic.min.css' %}">
 	</head>
 	<body>
-		{% block content %}{% endblock content %}
+		<header>
+			<nav>
+				<div class="left">
+					<div class="ui secondary pointing menu">
+					  <a href="/" class="active item">
+					    Inicio
+					  </a>
+					  <a href="/events" class="item">
+					    Eventos
+					  </a>
+					  <a href="/events" class="item">
+					    Manual de usuario
+					  </a>
+					</div>
+				</div>
+				<div class="right">
+					<h2>#pythoncolombia <i class="co flag"></i></h2#PythonColombia>
+				</div>
+			</nav>
+			<h2 class="ui icon header">
+			  <i class="hand spock icon"></i>
+			  <div class="content">
+			    Python Colombia
+			    <div class="sub header">Optimizamos la búsqueda de comunidades de Python en Colombia, facilitando eficientemente el contacto entre personas, instituciones u organizaciones internas y externas al país con intereses en el lenguaje y sus diferentes aplicaciones.</div>
+			  </div>
+			</h2>
+			
+		</header>
+		<section>
+			{% block content %}{% endblock content %}
+		</section>
+		<footer>
+			<div class="ui inverted vertical footer segment">
+			    <div class="ui container">
+			      <div class="ui stackable inverted divided equal height stackable grid">
+			        <div class="three wide column">
+			          <h4 class="ui inverted header">Acerca de</h4>
+			          <div class="ui inverted link list">
+			            <a href="/" class="item">Inicio</a>
+			            <a href="/groups" class="item">Comunidades</a>
+			            <a href="/events" class="item">Eventos</a>
+			          </div>
+			        </div>
+			        <div class="three wide column">
+			          <h4 class="ui inverted header">Colaboradores</h4>
+			          <div class="ui inverted link list">
+			            <a href="https://twitter.com/xogost" target="_blank" class="item">Juan Camilo Martínez Morales<br/>@xogost</a>
+			            <a href="https://twitter.com/jhonjairoroa87" target="_blank" class="item">Jhon Jairo Roa Acuña <br/>@jhonjairoroa87</a>
+			          </div>
+			        </div>
+			        <div class="seven wide column">
+			          <h4 class="ui inverted header">Python Colombia</h4>
+			          <p>&copy; Todos los derechos reservados.</p>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+		</footer>
 	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="{% static '/website/js/semantic.min.js' %}"></script>
 </html>

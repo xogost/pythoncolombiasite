@@ -1,19 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<ul>
-	{% for item in response_data %}
-		{% for group in item %}
-			<li>
-				<div>
-					<img src="{{ group.group_photo.highres_link }}" />
-					<span>{{ group.name }}</span>
-					<a href="/members/{{ group.id }}">
-						Ver Integrantes
-					</a>
+	<div class="content-groups">
+		<h2 class="ui center aligned icon header">
+		  <i class="circular users icon"></i>
+		  Listado de comunidades
+		</h2>
+		<div id="list-group" class="ui divided items">
+		{% for item in response_data %}
+			{% for group in item %}
+				<div class="item">
+					<div class="image">
+						<img class="" src="{{ group.group_photo.highres_link }}">
+					</div>
+					<div class="content">
+						<a href="{{ group.link }}" target="_blank" class="header">{{ group.name }}</a>
+						<div class="meta">
+							<span>Descripción</span>
+						</div>
+						<div class="description">
+							<p>
+								{{ group.description | safe }}
+							</p>
+						</div>
+						<div class="extra">
+							<span>
+								<i class="user icon"></i>
+								<a href="/members/{{ group.id }}">{{ group.members }} Integrantes</a>
+							</span>
+						</div>
+					</div>
 				</div>
-			</li>
+			{% endfor %}
 		{% endfor %}
-	{% endfor %}
-	</ul>
+		</div>
+	</div>
 {% endblock content %}

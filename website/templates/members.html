@@ -1,9 +1,34 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<ul>
-	{% for item in response_data.results %}
-		<li>{{ item.name }}</li>
-	{% endfor %}
-	</ul>
+	<div class="content-groups">
+		<h2 class="ui center aligned icon header">
+		  <i class="circular users icon"></i>
+		  Listado de Integrantes
+		</h2>
+		<div class="ui link cards">
+			{% for item in response_data.results %}
+				<div class="card">
+					<div class="image">
+						<img src="{{ item.photo.photo_link }}">
+					</div>
+					<div class="content">
+						<div class="header">{{ item.name }}</div>
+						<div class="meta">
+							<a>Descripción</a>
+						</div>
+						<div class="description">
+							{{ item.bio | safe }}
+						</div>
+					</div>
+					<div class="extra content">
+						<span>
+							<i class="user icon"></i>
+							Estado {{ item.status }}
+						</span>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 {% endblock content %}

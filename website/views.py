@@ -11,7 +11,7 @@ def groups(request):
 	"""
 	Get python groups from meetup.com
 	"""
-	locaitons = ['bogota', 'medellin', 'pasto', 'cali', 'barranquilla', 'santa marta', 'bucaramanga', 'cartagena', 'popayan', 'pereira']
+	locaitons = ['bogota', 'medellin', 'pasto', 'cali', 'barranquilla', 'bucaramanga', 'cartagena', 'popayan', 'pereira']
 	groups = list()
 	for item in locaitons:
 		url = "%s/find/groups?filter=all&text=python&country=CO&location=%s&sign=true&key=a6443747e92a6b4e347c6d6c7c4b4f" % (base_url, item)
