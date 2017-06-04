@@ -38,7 +38,7 @@ def events(request):
 	"""
 	Get python events from meetup.com
 	"""
-	url = "%s/find/events?text=python&sign=true&key=a6443747e92a6b4e347c6d6c7c4b4f" % (base_url)
+	url = "%s/find/events?text=python&radius=global&sign=true&key=a6443747e92a6b4e347c6d6c7c4b4f" % (base_url)
 	response = requests.get(url)
 	context = {
 		"response_data" : response.json()

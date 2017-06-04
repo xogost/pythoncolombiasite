@@ -1,20 +1,34 @@
 {% extends "base.html" %}
 
 {% block content %}
-	<ul>
-	{% for item in response_data %}
-		<li>
-			<strong>{{ item.name }}</strong>
-			<br/>
-			<br/>
-			<ul>
-				<li>{{ item.venue.address_1 }}, {{ item.venue.name }}</li>
-				<li>{{ item.venue.city }}, {{ item.venue.localized_country_name }}</li>
-				<li>
-					{{ item.description|safe }}
-				</li>
-			</ul>
-		</li>
-	{% endfor %}
-	</ul>
+	<div class="content-groups">
+		<h2 class="ui center aligned icon header">
+		  <i class="circular calendar icon"></i>
+		  Listado de eventos
+		</h2>
+		<div id="list-group" class="ui divided items">
+			{% for item in response_data %}
+				<div class="item">
+					<div class="image">
+						<img class="" src="{{ item.group.photo.photo_link }}">
+					</div>
+					<div class="content">
+						<a href="{{ group.link }}" target="_blank" class="header">{{ item.name }}</a>
+						<div class="meta">
+							<span>Descripción</span>
+						</div>
+						<div class="description">
+							<p>
+								{{ item.description|safe }}
+							</p>
+							<ul>
+								<li>{{ item.venue.address_1 }}, {{ item.venue.name }}</li>
+								<li>{{ item.venue.city }}, {{ item.venue.localized_country_name }}</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
 {% endblock content %}
