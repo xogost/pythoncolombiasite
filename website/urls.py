@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^$', views.groups, name='groups'),
     url(r'groups/$', views.groups, name='groups'),
     url(r'members/(\d+)/$', views.members, name='members'),
-    url(r'events/$', views.events, name='events')
+    url(r'events/$', views.events, name='events'),
+    url(r'help/$', views.index, name='index')
 ]

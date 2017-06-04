@@ -64,3 +64,8 @@ header h2 .sub{
 /*.active.item{
 	border-color: #fff !important;
 }*/
+
+#manuales{
+	margin: 0 auto;
+	text-align: center;
+}
